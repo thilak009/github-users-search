@@ -1,3 +1,5 @@
-export default[
+const mockFollowers=[
 
 ]
+
+export default mockFollowers;

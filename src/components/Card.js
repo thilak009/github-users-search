@@ -15,13 +15,13 @@ const Card = () => {
         <h4>{name}</h4>
         <p>{twitter_username?`@${twitter_username}`:""}</p>
       </div>
-      <a href={html_url} target="_blank">Follow</a>
+      <a href={html_url} target="_blank" rel="noopener noreferrer">Follow</a>
     </header>
     <p className="bio">{bio}</p>
     <div className="links">
       <p><MdBusiness></MdBusiness>{company}</p>
       <p><MdLocationOn></MdLocationOn>{location}</p>
-      <a href={`https://${blog}`}><MdLink></MdLink>{blog}</a>
+      <a href={`${blog}`} target="_blank" rel="noopener noreferrer"><MdLink></MdLink>{blog}</a>
     </div>
   </Wrapper>;
 };
@@ -60,6 +60,7 @@ const Wrapper = styled.article`
     }
     h4 {
       margin-bottom: 0.25rem;
+      color:var(--headings);
     }
     p {
       margin-bottom: 0;
@@ -104,5 +105,6 @@ const Wrapper = styled.article`
       }
     }
   }
+
 `;
 export default Card;

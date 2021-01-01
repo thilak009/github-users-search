@@ -61,6 +61,7 @@ const Wrapper = styled.div`
       letter-spacing: var(--spacing);
       color: var(--clr-grey-3);
       padding: 0.25rem 0.5rem;
+      background:var(--clr-white);
     }
     input::placeholder {
       color: var(--clr-grey-3);

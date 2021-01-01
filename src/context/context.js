@@ -20,7 +20,8 @@ const GithubProvider =({children})=>{
     //error
     const [error,setError]=useState({show:false,msg:""});
 
-
+    const [chartColor,setChartColor]=useState('#1a1a1a');
+    const [chartFontColor,setChartFontColor]=useState('#4f4f4f');
     
     const searchGithubUser=async (user) =>{
 
@@ -117,6 +118,8 @@ const GithubProvider =({children})=>{
         error,
         searchGithubUser,
         isLoading,
+        chartColor,setChartColor,
+        chartFontColor,setChartFontColor,
     }}>
         {children}
     </GithubContext.Provider>

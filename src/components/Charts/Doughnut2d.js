@@ -1,6 +1,6 @@
 // STEP 1 - Include Dependencies
 // Include react
-import React from "react";
+import React,{useContext} from "react";
 
 // Include the react-fusioncharts component
 import ReactFC from "react-fusioncharts";
@@ -14,6 +14,8 @@ import Chart from "fusioncharts/fusioncharts.charts";
 // Include the theme as fusion
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 
+import {GithubContext} from './../../context/context';
+
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
@@ -24,6 +26,8 @@ ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
 
 const ChartComponent=({data})=>{
+  const {chartColor,chartFontColor}=useContext(GithubContext);
+
   const chartConfigs = {
     type: "doughnut2d", // The chart type
     width: "100%", // Width of the chart
@@ -32,10 +36,11 @@ const ChartComponent=({data})=>{
     dataSource: {
       // Chart Configuration
       chart: {
-       caption:'Stars per Language',
+       caption:'Stars per Language',captionFontColor:chartFontColor,
        theme:'fusion',
+       bgColor:chartColor,
        doughnutRadius: '45%',
-       showPercentValues:0,
+       showPercentValues:0,valueFontColor:chartFontColor,
        paletteColors:'#FCBA04 ,#09814A, #0C6291, #FF5A5F, #7E1946',
       },
       // Chart Data

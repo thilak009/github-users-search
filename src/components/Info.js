@@ -85,6 +85,7 @@ const Wrapper = styled.section`
     h3 {
       margin-bottom: 0;
       letter-spacing: 0;
+      color:var(--headings);
     }
     p {
       margin-bottom: 0;

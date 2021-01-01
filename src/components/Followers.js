@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Followers = () => {
   const {followers}=React.useContext(GithubContext);
-  const {githubUser}=React.useContext(GithubContext);
+  //const {githubUser}=React.useContext(GithubContext);
 
   return(
     <Wrapper>
@@ -16,7 +16,7 @@ const Followers = () => {
                 <img src={img} alt={login}></img>
                 <div>
                   <h4>{login}</h4>
-                  <a href={html_url}>{html_url}</a>
+                  <a href={html_url} target="_blank" rel="noopener noreferrer">{html_url}</a>
                 </div>
             </article>
           })
@@ -72,10 +72,12 @@ const Wrapper = styled.article`
     }
     h4 {
       margin-bottom: 0;
+      color:var(--headings);
     }
     a {
       color: var(--clr-grey-5);
     }
   }
+
 `;
 export default Followers;
