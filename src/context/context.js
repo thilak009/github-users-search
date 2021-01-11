@@ -20,8 +20,8 @@ const GithubProvider =({children})=>{
     //error
     const [error,setError]=useState({show:false,msg:""});
 
-    const [chartColor,setChartColor]=useState('#1a1a1a');
-    const [chartFontColor,setChartFontColor]=useState('#4f4f4f');
+    const [chartColor,setChartColor]=useState('#ffffff');
+    const [chartFontColor,setChartFontColor]=useState('#ffffff');
     
     const searchGithubUser=async (user) =>{
 

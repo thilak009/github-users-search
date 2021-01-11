@@ -5,8 +5,12 @@ import {GithubContext} from './context/context';
 
 const getStorageTheme = () => {
   let theme = 'light-theme';
-  if (localStorage.getItem('theme')) {
-    theme = localStorage.getItem('theme');
+  if (sessionStorage.getItem('theme')) {
+    theme = sessionStorage.getItem('theme');
+    
+  }
+  else{
+    theme='light-theme';
   }
   return theme;
 };
@@ -25,9 +29,15 @@ function App() {
     }
   };
 
+
   useEffect(() => {
     document.documentElement.className = theme;
-    localStorage.setItem('theme', theme);
+    sessionStorage.setItem('theme', theme);
+    if (theme === 'light-theme') {
+      setChartColor("#ffffff");setChartFontColor('#4f4f4f');
+    } else {
+      setChartColor('#1a1a1a');setChartFontColor('#d6d6d6');
+    }
   }, [theme]);
 
   return (
